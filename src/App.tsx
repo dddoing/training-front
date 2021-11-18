@@ -1,11 +1,14 @@
-import './App.css';
+import React, { Component } from "react";
+import CustomRouter from "./CustomRouter";
 
-function App() {
-  return (
-    <div className="App">
-          Learn React
-    </div>
-  );
+class App extends Component<any, any>{
+    render() {
+        return (
+            <>
+                <CustomRouter/>
+            </>
+        );
+    }
 }
 
 export default App;
