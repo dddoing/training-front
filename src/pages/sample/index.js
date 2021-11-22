@@ -1,7 +1,7 @@
 import {Component} from 'react';
 import {Link} from 'react-router-dom';
 
-export default class Sample extends Component<any, any> {
+export default class Sample extends Component{
     //
     render() {
         return (

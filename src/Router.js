@@ -2,7 +2,7 @@ import {Component} from 'react';
 import {BrowserRouter, Link, Route, Routes} from 'react-router-dom';
 import {Temp1, Temp2, Sample} from "./pages"
 
-export default class Router extends Component<any, any> {
+export default class Router extends Component{
     render() {
         return (
             <BrowserRouter>
