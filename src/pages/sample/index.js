@@ -1,4 +1,4 @@
-import {Component} from 'react';
+import React,{Component} from 'react';
 import {Link} from 'react-router-dom';
 
 export default class Sample extends Component{
@@ -8,6 +8,7 @@ export default class Sample extends Component{
             <>
                 <Link to={"/temp1"}>temp1</Link>
                 <Link to={"/temp2"}>temp2</Link>
+                <Link to={"/app"}>app</Link>
             </>
         )
     }

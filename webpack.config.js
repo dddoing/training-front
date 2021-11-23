@@ -12,35 +12,32 @@ module.exports = {
         port: 3001,
     },
     output: {
-        publicPath: "auto",
+        publicPath: "http://localhost:3001/",
     },
     module: {
         rules: [
-            {
-                test: /bootstrap\.js$/,
-                loader: "bundle-loader",
-                options: {
-                    lazy: true,
-                },
-            },
             {
                 test: /\.jsx?$/,
                 loader: "babel-loader",
                 exclude: /node_modules/,
                 options: {
-                    presets: ["@babel/preset-react"],
+                    presets: ["@babel/preset-env","@babel/preset-react"],
                 },
             },
         ],
     },
-    //http://localhost:3002/remoteEntry.js
+
     plugins: [
         new ModuleFederationPlugin({
             name: "app1",
             remotes: {
                 app2: `app2@${getRemoteEntryUrl(3002)}`,
             },
-            shared: { react: { singleton: true }, "react-dom": { singleton: true } },
+            // shared: ['react', 'react-dom'],
+            shared: { "react": { singleton: true ,strictVersion:true},
+                "react-dom": { singleton: true ,strictVersion:true },
+                "react-router-dom": { singleton: true ,strictVersion:true }
+            },
         }),
         new HtmlWebpackPlugin({
             template: "./public/index.html",

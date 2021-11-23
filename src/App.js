@@ -1,7 +1,7 @@
-import { Component } from 'react';
+import React from 'react';
 import Router from './Router';
 
-class App extends Component{
+class App extends React.Component{
     //
     render() {
         //
