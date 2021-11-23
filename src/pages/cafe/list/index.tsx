@@ -20,30 +20,30 @@ export default class ListPage extends Component<any, any>{
         ];
         const elements = [
             {
-                name:"부대감자탕",
-                distance:5,
-                taste:4,
-                price:3,
-                amount:5,
-                total:"거리가 가깝고 음식맛은 괜찮음. 양이 조금 많고 가격이 다소 비쌈. 가끔 가기에는 나쁘지 않음 2주에 1번?",
-                desc:"쌀쌀한 날씨에 가면 사람이 꽉참"
+                name:"바나프레소",
+                distance:3,
+                taste:3,
+                price:4,
+                amount:4,
+                total:"가격이 전체적으로 싸고 싼만큼 값어치는함. 딱 그 정도",
+                desc:"자리가 넓지않아서 가끔 자리 없음."
             },
             {
-                name:"천룡(중국집)",
-                distance:5,
-                taste:3,
+                name:"투썸플레이스 선릉로점",
+                distance:3,
+                taste:4,
                 price:2,
                 amount:3,
-                total:"거리가 가깝고 음식맛, 양은 평범. 가격이 다소 비쌈. 한달에 1번 가는것도 생각해볼정도"
+                total:"거리가 좀 있고 가격도 꽤 나감 그런데 홀이 넓음"
             },
             {
-                name:"안동국시",
-                distance:3,
-                taste:5,
-                price:0,
-                amount:4,
-                total:"거리가 조금 멀고 가격이 엄청 비쌈. 맛은 있고 양도 꽤 많음.",
-                desc:"요리가 나오는시간이 오래 걸림"
+                name:"백다방",
+                distance:2,
+                taste:3,
+                price:4,
+                amount:5,
+                total:"맛은 평범한데 양이 많음.",
+                desc:"분틀가면 가는듯"
             }
         ];
         const info = {
