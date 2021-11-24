@@ -1,8 +1,9 @@
 import React, {Component, Suspense} from 'react';
-import {BrowserRouter, Link, Route, Routes} from 'react-router-dom';
-import {Temp1, Temp2,Sample} from "./pages"
+import {BrowserRouter, Route, Routes, withRouter} from 'react-router-dom';
+import {Home} from "./pages";
+import {Navigation} from "./shared/Navigation";
 
-export default class Router extends Component {
+class Router extends Component {
 
     constructor() {
         super();
@@ -16,16 +17,10 @@ export default class Router extends Component {
             <>
                 <Suspense fallback='Loading Button'>
                     <BrowserRouter>
-                        <div>
-                            <Link to={"/"}>back</Link>
-                        </div>
+                        <Navigation/>
                         <Routes>
-                            <Route path="/" element={
-                                <Sample/>
-                            }/>
+                            <Route path="/" element={<Home/>}/>
                             <Route path="/app" element={<Sample1/>}/>
-                            <Route path="/temp1" element={<Temp1/>}/>
-                            <Route path="/temp2" element={<Temp2/>}/>
                         </Routes>
                     </BrowserRouter>
                 </Suspense>
@@ -33,3 +28,5 @@ export default class Router extends Component {
         )
     }
 }
+
+export default Router;

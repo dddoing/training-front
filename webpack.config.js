@@ -3,9 +3,10 @@ const { ModuleFederationPlugin } = require("webpack").container;
 const path = require("path");
 
 module.exports = {
-    entry: "./src/index",
-    mode: "development",
+    entry: "./src/index", //
+    mode: "development", //
     devServer: {
+        historyApiFallback: true,
         static: {
             directory: path.join(__dirname, "dist"),
         },
