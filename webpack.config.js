@@ -6,14 +6,14 @@ module.exports = {
     entry: "./src/index", //
     mode: "development", //
     devServer: {
-        historyApiFallback: true,
+        historyApiFallback: false, //
         static: {
             directory: path.join(__dirname, "dist"),
         },
-        port: 3001,
+        port: 3001, //
     },
-    output: {
-        publicPath: "http://localhost:3001/",
+    output: { //
+        publicPath: "http://localhost:3001/", //
     },
     module: {
         rules: [
@@ -30,11 +30,12 @@ module.exports = {
 
     plugins: [
         new ModuleFederationPlugin({
-            name: "app1",
-            remotes: {
-                app2: `app2@${getRemoteEntryUrl(3002)}`,
+            name: "App1", // 빌드 이름정의 mciro
+            remotes: { // 사용할 Remote 빌드의 위치 정의
+                App2: `App2@${getRemoteEntryUrl(3002)}`, //domain: `domain@fds'
             },
             // shared: ['react', 'react-dom'],
+            // 공유할 모듈 정의
             shared: { "react": { singleton: true ,strictVersion:true},
                 "react-dom": { singleton: true ,strictVersion:true },
                 "react-router-dom": { singleton: true ,strictVersion:true }
@@ -47,5 +48,5 @@ module.exports = {
 };
 function getRemoteEntryUrl(port) {
 
-    return `//localhost:${port}/Sample.js`;
+    return `//localhost:${port}/App2.js`;
 }

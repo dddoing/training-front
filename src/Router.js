@@ -9,12 +9,15 @@ class Router extends Component {
         super();
     }
 
+
+
     render() {
         //
-        const Restaurant = React.lazy(() => import('app2/App'));
+        const Restaurant = React.lazy(() => import('App2/App2'));
 
         return (
             <>
+                {/*progressbar component*/}
                 <Suspense fallback='Loading Button'>
                     <BrowserRouter>
                         <Navigation/>
