@@ -12,10 +12,10 @@ class NavigationContainer extends React.Component {
 
     }
     //
-    onChangeNav(newValue) {
-        const {history,location,match} = this.props
+    onChangeNav(e,newValue) {
+        console.log(e.target.innerText)
         this.setState({value:newValue});
-        console.log(history,location,match)
+        this.props.history.push(`/${e.target.innerText}`);
 
     }
     //
@@ -23,7 +23,7 @@ class NavigationContainer extends React.Component {
         const {value} = this.state;
         return (
             <Box sx={{width: "auto"}}>
-                <BottomNavigation showLabels value={value} onChange={(e,v)=>this.onChangeNav(v)}>
+                <BottomNavigation showLabels value={value} onChange={(e,v)=>this.onChangeNav(e,v)}>
                     <BottomNavigationAction label="main"/>
                     <BottomNavigationAction label="restaurant"/>
                     <BottomNavigationAction label="cafe"/>
@@ -33,4 +33,4 @@ class NavigationContainer extends React.Component {
     }
 }
 
-export default (NavigationContainer);
+export default withRouter(NavigationContainer);

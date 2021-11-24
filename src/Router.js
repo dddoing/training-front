@@ -1,5 +1,5 @@
 import React, {Component, Suspense} from 'react';
-import {BrowserRouter, Route, Routes, withRouter} from 'react-router-dom';
+import {BrowserRouter, Redirect, Route, Switch, withRouter} from 'react-router-dom';
 import {Home} from "./pages";
 import {Navigation} from "./shared/Navigation";
 
@@ -11,17 +11,18 @@ class Router extends Component {
 
     render() {
         //
-        const Sample1 = React.lazy(() => import('app2/App'));
+        const Restaurant = React.lazy(() => import('app2/App'));
 
         return (
             <>
                 <Suspense fallback='Loading Button'>
                     <BrowserRouter>
                         <Navigation/>
-                        <Routes>
-                            <Route path="/" element={<Home/>}/>
-                            <Route path="/app" element={<Sample1/>}/>
-                        </Routes>
+                        <Switch>
+                            <Route path="/" exact component={Home}/>
+                            <Route path="/restaurant" exact component={Restaurant}/>
+                            <Route component={()=><Redirect to='/'/>} />
+                        </Switch>
                     </BrowserRouter>
                 </Suspense>
             </>
@@ -29,4 +30,4 @@ class Router extends Component {
     }
 }
 
-export default Router;
+export default (Router);

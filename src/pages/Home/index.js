@@ -1,18 +1,21 @@
 import React from 'react'
+import {withRouter} from "react-router-dom";
 
 class home extends React.Component {
     //
     componentDidMount() {
         //
-        const {history,location,match} = this.props
-        console.log(history,location,match)
+        console.log('?????')
     }
 
     //
     render() {
-        return(
-            <div>Home</div>
+        return (
+            <>
+                <div>Home</div>
+            </>
         )
     }
 }
-export default home;
+
+export default withRouter(home);
