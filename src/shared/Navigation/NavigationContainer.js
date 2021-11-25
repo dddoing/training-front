@@ -11,6 +11,13 @@ class NavigationContainer extends React.Component {
         }
 
     }
+    componentDidMount() {
+        //
+        const {params} = this.props.match;
+        console.log(this.props.match)
+        // this.setState({value:newValue});
+    }
+
     //
     onChangeNav(e,newValue) {
         console.log(e.target.innerText)

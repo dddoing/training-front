@@ -1,7 +1,8 @@
 import React, {Component, Suspense} from 'react';
-import {BrowserRouter, Redirect, Route, Switch, withRouter} from 'react-router-dom';
-import {Home} from "./pages";
+import {BrowserRouter, Redirect, Route, Switch} from 'react-router-dom';
 import {Navigation} from "./shared/Navigation";
+import {LoginContainer, Main} from "./pages";
+import {CustomRoute} from "./shared";
 
 class Router extends Component {
 
@@ -9,22 +10,24 @@ class Router extends Component {
         super();
     }
 
-
-
     render() {
         //
-        const Restaurant = React.lazy(() => import('App2/App2'));
+        // const Restaurant = React.lazy(() => import('App2/Restaurant'));
+        const Restaurant = React.lazy(() => import('App2/App'));
+        const Cafe = React.lazy(() => import('Cafe/Cafe'));
 
         return (
             <>
-                {/*progressbar component*/}
                 <Suspense fallback='Loading Button'>
                     <BrowserRouter>
-                        <Navigation/>
                         <Switch>
-                            <Route path="/" exact component={Home}/>
-                            <Route path="/restaurant" exact component={Restaurant}/>
-                            <Route component={()=><Redirect to='/'/>} />
+                            <>
+                                <Route path="/" exact component={LoginContainer}/>
+                                <CustomRoute path="/main" exact component={Main}/>
+                                <CustomRoute path="/restaurant" exact component={Restaurant}/>
+                                <CustomRoute path="/cafe" exact component={Cafe}/>
+                            </>
+                            <Route component={() => <Redirect to='/'/>}/>
                         </Switch>
                     </BrowserRouter>
                 </Suspense>

@@ -6,14 +6,14 @@ module.exports = {
     entry: "./src/index", //
     mode: "development", //
     devServer: {
-        historyApiFallback: false, //
+        historyApiFallback: true, //
         static: {
             directory: path.join(__dirname, "dist"),
         },
         port: 3001, //
     },
     output: { //
-        publicPath: "http://localhost:3001/", //
+        publicPath: "http://172.31.10.151:3001/", //
     },
     module: {
         rules: [
@@ -32,7 +32,9 @@ module.exports = {
         new ModuleFederationPlugin({
             name: "App1", // 빌드 이름정의 mciro
             remotes: { // 사용할 Remote 빌드의 위치 정의
-                App2: `App2@${getRemoteEntryUrl(3002)}`, //domain: `domain@fds'
+                // App2: `App2@${getRemoteEntryUrl(3002)}`, //domain: `domain@fds'
+                Cafe: `Cafe@${getRemoteEntryUrl(3003)}`,//172.31.10.140
+                App2: `App2@//172.31.10.140:3002/App.js`,
             },
             // shared: ['react', 'react-dom'],
             // 공유할 모듈 정의
