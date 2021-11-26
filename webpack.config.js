@@ -13,7 +13,8 @@ module.exports = {
         port: 3001, //
     },
     output: { //
-        publicPath: "http://172.31.10.151:3001/", //
+        publicPath: "http://localhost:3001/", //
+        // publicPath: "http://172.31.10.151:3001/", //
     },
     module: {
         rules: [

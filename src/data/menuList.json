@@ -1,0 +1,50 @@
+{
+  "admin" : {
+    "menu" : [
+      {
+        "menuName": "main",
+        "path": "/main"
+      },
+      {
+        "menuName": "restaurant",
+        "path": "/restaurant"
+      },
+      {
+        "menuName": "cafe",
+        "path": "/cafe"
+      }
+    ]
+  },
+  "member1" : {
+    "menu" : [
+      {
+        "menuName": "main",
+        "path": "/main"
+      },
+      {
+        "menuName": "restaurant",
+        "path": "/restaurant"
+      }
+    ]
+  },
+  "member2" : {
+    "menu" : [
+      {
+        "menuName": "main",
+        "path": "/main"
+      },
+      {
+        "menuName": "cafe",
+        "path": "/cafe"
+      }
+    ]
+  },
+  "member3" : {
+    "menu" : [
+      {
+        "menuName": "main",
+        "path": "/main"
+      }
+    ]
+  }
+}

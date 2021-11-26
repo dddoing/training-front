@@ -1,6 +1,6 @@
 import React from 'react';
 import Form from "./Form";
-import member from '../../../data/member.json'
+import member from '../../data/member.json'
 
 class LoginContainer extends React.Component {
 
@@ -17,6 +17,7 @@ class LoginContainer extends React.Component {
     }
     componentDidMount() {
         console.log(this.props)
+        sessionStorage.removeItem('pass')
     }
 
     handleSubmit(e) {

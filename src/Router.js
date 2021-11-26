@@ -7,6 +7,7 @@ class Router extends Component {
 
     constructor() {
         super();
+        console.log('Router constructor')
     }
 
     render() {
