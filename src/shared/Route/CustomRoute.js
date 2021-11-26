@@ -1,5 +1,5 @@
 import React, {Component} from 'react'
-import {Redirect, Route} from "react-router-dom";
+import {Route} from "react-router-dom";
 import {Navigation} from "../Navigation";
 
 class CustomRoute extends React.Component {
@@ -8,12 +8,23 @@ class CustomRoute extends React.Component {
         super();
     }
 
+    componentDidMount() {
+        //
+
+    }
+
     render() {
         //
         const {...rest} = this.props;
         return (
             <>
-                <Route {...rest} render={(props) =>(<Component {...props}/>)}/>
+                <Navigation/>
+                <Route {...rest}
+                    render={
+                        (props) =>
+                            <Component {...props}/>
+                    }
+                />
             </>
         )
     }

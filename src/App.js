@@ -1,6 +1,7 @@
 import React from 'react';
 import Router from './Router';
 import {LoginContainer} from "./pages";
+import {Navigation} from "./shared";
 
 class App extends React.Component{
     //
@@ -23,6 +24,7 @@ class App extends React.Component{
         return (
             <>
                 {/*{isLogin ? <Router/> : <LoginContainer isLoginCheck={this.isLoginCheck}/>}*/}
+                {/*<Navigation/>*/}
                 <Router/>
             </>
         );

@@ -13,15 +13,17 @@ class NavigationContainer extends React.Component {
     }
     componentDidMount() {
         //
-        const {params} = this.props.match;
-        console.log(this.props.match)
+        // const {params} = this.props.match;
+        // console.log(this.props.match)
         // this.setState({value:newValue});
+        console.log('??')
     }
 
     //
-    onChangeNav(e,newValue) {
-        console.log(e.target.innerText)
-        this.setState({value:newValue});
+    onChangeNav(e,value) {
+        console.log("{},{}",e.target.innerText)
+        this.setState({value});
+        console.log(this.state.value)
         this.props.history.push(`/${e.target.innerText}`);
 
     }
