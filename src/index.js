@@ -1,1 +1,1 @@
-import('./bootstrap.js')
+import('./federation.js')
