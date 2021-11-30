@@ -1,0 +1,21 @@
+.login_wrap {
+    max-width: 500px;
+    padding: 0px 40px;
+    horiz-align: center;
+    margin: 0px auto;
+}
+
+.input_100 {
+    width:100%;
+}
+.input_80 {
+    width:80%;
+}
+
+.lpad_20 {
+    padding-left: 20%;
+}
+
+.rpad_20 {
+    padding-right: 20%;
+}

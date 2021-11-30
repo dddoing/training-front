@@ -2923,7 +2923,7 @@
   "resolved" "https://registry.npmjs.org/async-limiter/-/async-limiter-1.0.1.tgz"
   "version" "1.0.1"
 
-"async@^2.6.2":
+"async@", "async@^2.6.2":
   "integrity" "sha512-zflvls11DCy+dQWzTW2dzuilv8Z5X/pjfmZOWba6TNIVDm+2UDaJmXSOXlasHKfNBs8oo3M0aT50fDEWfKZjXg=="
   "resolved" "https://registry.npmjs.org/async/-/async-2.6.3.tgz"
   "version" "2.6.3"
@@ -3883,6 +3883,11 @@
   "integrity" "sha512-hUewv7oMjCp+wkBv5Rm0v87eJhq4woh5rSR+42YSQJKecCqgIqNkZ6lAlQms/BwHPJA5NKMRlpxPRv0n8HQW6g=="
   "resolved" "https://registry.npmjs.org/colorette/-/colorette-2.0.16.tgz"
   "version" "2.0.16"
+
+"colors@^1.0.3":
+  "integrity" "sha512-a+UqTh4kgZg/SlGvfbzDHpgRu7AAQOmmqRHJnxhRZICKFUT91brVhNNt58CMWU9PsBbv3PDCZUHbVxuDiH2mtA=="
+  "resolved" "https://registry.npmjs.org/colors/-/colors-1.4.0.tgz"
+  "version" "1.4.0"
 
 "combined-stream@^1.0.8":
   "integrity" "sha512-FQN4MRfuJeHf7cBbBMJFXhKSDq+2kAArBlmRBvcvFE5BB1HZKXtSFASDhdlz9zOYwxh8lDdnvmMOe/+5cdoEdg=="
@@ -8439,6 +8444,14 @@
   "resolved" "https://registry.npmjs.org/node-int64/-/node-int64-0.4.0.tgz"
   "version" "0.4.0"
 
+"node-ip@^0.1.2":
+  "integrity" "sha1-PazMrLOVfB9afxHdbXJLFsOrUFs="
+  "resolved" "https://registry.npmjs.org/node-ip/-/node-ip-0.1.2.tgz"
+  "version" "0.1.2"
+  dependencies:
+    "colors" "^1.0.3"
+    "node-localip" "0.0.2"
+
 "node-libs-browser@^2.2.1":
   "integrity" "sha512-h/zcD8H9kaDZ9ALUWwlBUDo6TKF8a7qBSCSEGfjTVIYeqsioSKaAX+BN7NgiMGp6iSIXZ3PxgCu8KS3b71YK5Q=="
   "resolved" "https://registry.npmjs.org/node-libs-browser/-/node-libs-browser-2.2.1.tgz"
@@ -8467,6 +8480,14 @@
     "url" "^0.11.0"
     "util" "^0.11.0"
     "vm-browserify" "^1.0.1"
+
+"node-localip@0.0.2":
+  "integrity" "sha1-HUCKEWrqp8GTGU/8g2PT+rO8aiw="
+  "resolved" "https://registry.npmjs.org/node-localip/-/node-localip-0.0.2.tgz"
+  "version" "0.0.2"
+  dependencies:
+    "colors" "^1.0.3"
+    "wmic" "0.0.7"
 
 "node-modules-regexp@^1.0.0":
   "integrity" "sha1-jZ2+KJZKSsVxLpExZCEHxx6Q7EA="
@@ -12831,6 +12852,13 @@
   "integrity" "sha512-JcKqAHLPxcdb9KM49dufGXn2x3ssnfjbcaQdLlfZsL9rH9wgDQjUtDxbo8NE0F6SFvydeu1VhZe7hZuHsB2/pw=="
   "resolved" "https://registry.npmjs.org/wildcard/-/wildcard-2.0.0.tgz"
   "version" "2.0.0"
+
+"wmic@0.0.7":
+  "integrity" "sha1-pJGhxvkQ9to2je8pR5ZpTPlol4U="
+  "resolved" "https://registry.npmjs.org/wmic/-/wmic-0.0.7.tgz"
+  "version" "0.0.7"
+  dependencies:
+    "async" ""
 
 "word-wrap@^1.2.3", "word-wrap@~1.2.3":
   "integrity" "sha512-Hz/mrNwitNRh/HUAtM/VT/5VH+ygD6DV7mYKZAtHOrbs8U7lvPS6xf7EJKMF0uW1KJCl0H701g3ZGus+muE5vQ=="

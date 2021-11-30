@@ -1,8 +1,14 @@
 import React from 'react';
-import Router from './Router';
-import {Navigation} from "./shared/Navigation";
+import Router from "./Router";
 
 class App extends React.Component{
+    //
+    constructor() {
+        super();
+
+        sessionStorage.removeItem("loginInfo");
+    }
+
     //
     render() {
         //

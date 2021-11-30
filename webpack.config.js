@@ -1,6 +1,8 @@
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const { ModuleFederationPlugin } = require("webpack").container;
 const path = require("path");
+const ip = require("ip");
+const port = 3001;
 
 module.exports = {
     entry: "./src/index", //
@@ -10,10 +12,10 @@ module.exports = {
         static: {
             directory: path.join(__dirname, "dist"),
         },
-        port: 3001, //
+        port: port, //
     },
     output: { //
-        publicPath: "http://localhost:3001/", //
+        publicPath: `//${ip.address()}:${port}/`, //
     },
     module: {
         rules: [
@@ -25,18 +27,22 @@ module.exports = {
                     presets: ["@babel/preset-env","@babel/preset-react"],
                 },
             },
+            {
+                test: /\.css$/,
+                use: ['style-loader', 'css-loader']
+            }
         ],
     },
 
     plugins: [
         new ModuleFederationPlugin({
-            name: "App1", // 빌드 이름정의 mciro
-            remotes: { // 사용할 Remote 빌드의 위치 정의
-                App2: `App2@${getRemoteEntryUrl(3002)}`, //domain: `domain@fds'
+            name: "MicroApp",
+            remotes: {
+                Restaurant: `Restaurant@//172.31.10.140:3002/App.js`
             },
-            // shared: ['react', 'react-dom'],
             // 공유할 모듈 정의
-            shared: { "react": { singleton: true ,strictVersion:true},
+            shared: {
+                "react": { singleton: true ,strictVersion:true},
                 "react-dom": { singleton: true ,strictVersion:true },
                 "react-router-dom": { singleton: true ,strictVersion:true }
             },
@@ -47,6 +53,5 @@ module.exports = {
     ],
 };
 function getRemoteEntryUrl(port) {
-
-    return `//localhost:${port}/App2.js`;
+    return `//localhost:${port}/App.js`;
 }

@@ -4,8 +4,6 @@ import {withRouter} from "react-router-dom";
 class home extends React.Component {
     //
     componentDidMount() {
-        //
-        console.log('?????')
     }
 
     //
