@@ -1,7 +1,6 @@
 const { withFederatedSidecar } = require("@module-federation/nextjs-mf");
 
 module.exports = withFederatedSidecar({
-    name: "training-front",
     shared: {
         react: {
             // Notice shared are NOT eager here.
@@ -21,13 +20,11 @@ module.exports = withFederatedSidecar({
             test: /_app.js/,
             loader: "@module-federation/nextjs-mf/lib/federation-loader.js",
         });
-
+        console.log(isServer)
+        console.log(webpack)
         if (isServer) {
-            // ignore it on SSR, realistically you probably wont be SSRing Fmodules, without paid support from @ScriptedAlchemy
             Object.assign(config.resolve.alias, {
-                checkout: false,
-                home: false,
-                shop: false,
+                restaurant: false,
             });
         } else {
             config.output.publicPath = "auto";
@@ -35,7 +32,7 @@ module.exports = withFederatedSidecar({
                 new webpack.container.ModuleFederationPlugin({
                     remoteType: "var",
                     remotes: {
-                        home: "home",
+                        restaurant:"restaurant",
                     },
                     shared: {
                         "@module-federation/nextjs-mf/lib/noop": {
