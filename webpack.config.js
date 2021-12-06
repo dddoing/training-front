@@ -1,6 +1,7 @@
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const { ModuleFederationPlugin } = require("webpack").container;
 const path = require("path");
+const deps = require("./package.json").dependencies;
 
 module.exports = {
     entry: "./src/index", //
@@ -33,15 +34,17 @@ module.exports = {
         new ModuleFederationPlugin({
             name: "App1", // 빌드 이름정의 mciro
             remotes: { // 사용할 Remote 빌드의 위치 정의
-                // App2: `App2@${getRemoteEntryUrl(3002)}`, //domain: `domain@fds'
+                App2: `App2@${getRemoteEntryUrl(3002)}`, //domain: `domain@fds'
                 Cafe: `Cafe@${getRemoteEntryUrl(3003)}`,//172.31.10.140
-                App2: `App2@//172.31.10.151:3002/App.js`,
-            },
+                // App2: `App2@//172.31.10.151:3002/App.js`,
+            }
             // shared: ['react', 'react-dom'],
             // 공유할 모듈 정의
-            shared: { "react": { singleton: true ,strictVersion:true},
-                "react-dom": { singleton: true ,strictVersion:true },
-                "react-router-dom": { singleton: true ,strictVersion:true }
+            ,shared: {
+                ...deps,
+                "react": { singleton: true ,strictVersion:true,eager:false},
+                "react-dom": { singleton: true ,strictVersion:true,eager:false },
+                "react-router-dom": { singleton: true ,strictVersion:true,eager:false}
             },
         }),
         new HtmlWebpackPlugin({

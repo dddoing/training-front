@@ -13,8 +13,8 @@ class Router extends Component {
 
     render() {
         //
-        const Restaurant = React.lazy(() => import('App2/Restaurant'));
-        // const Restaurant = React.lazy(() => import('App2/App'));
+        // const Restaurant = React.lazy(() => import('App2/Restaurant'));
+        const Restaurant = React.lazy(() => import('App2/App2'));
         const Cafe = React.lazy(() => import('Cafe/Cafe'));
 
         return (
